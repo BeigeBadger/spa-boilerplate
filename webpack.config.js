@@ -1,0 +1,42 @@
+var path = require("path");
+var config = {
+/* 
+ * The entry point of the application. 
+ * Webpack uses this information to create the dependency tree which is used to bundle the scripts.
+ */
+entry: ["./app/index.tsx"],
+/* 
+ * The output location for Webpack.
+ * This information is used to give the name of the bundled file and the location of the bundled file. 
+ */
+output: {
+   path: path.resolve(__dirname, "build"),
+   publicPath: "/build/",
+   filename: "bundle.js"
+},
+/* 
+ * The rules to apply around file types to target.
+ * The extensions which will be imported or required in the application scripts.
+ */
+resolve: {
+    extensions: [".ts", ".tsx", ".js"]
+},
+module: {
+    /* 
+     * Define the loaders to be used. Regex will test the type of files on 
+     * which the loader is to be applied. The excluded files are also mentioned.
+     * Loaders are used mainly to transpile the file before bundling.
+     */
+    rules: [{
+        enforce: 'pre',
+        test: /\.tsx?$/,
+        use: "source-map-loader",
+        exclude: /node_modules/
+    },{
+        test: /\.tsx?$/,
+        loader: "ts-loader",
+        exclude: /node_modules/
+    }],
+}};
+
+module.exports = config;

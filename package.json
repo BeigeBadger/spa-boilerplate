@@ -1,0 +1,26 @@
+{
+  "name": "spa-boilerplate",
+  "version": "0.0.1",
+  "description": "I am a SPA that uses React, Webpack, Yarn, and Typescript",
+  "main": "index.tsx",
+  "author": "Matt Stannett",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server --progress",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.7",
+    "@types/react-dom": "^15.5.5",
+    "source-map-loader": "^0.2.2",
+    "ts-loader": "^2.3.7",
+    "typescript": "^2.5.3",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
